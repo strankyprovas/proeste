@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PRO ESTE — Dentální centrum Prostějov | Zubní ordinace</title>
+<meta name="description" content="Dentální centrum PRO ESTE v Prostějově — komplexní zubní péče, dentální hygiena, bílé plomby, korunky, endodoncie a ošetření pod mikroskopem. Smlouvy se zdravotními pojišťovnami. Husovo náměstí 2268/45." />
+<meta name="theme-color" content="#2b2e43" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#2b2e43; --navy-soft:#3a3e5a; --ink:#2b2e43;
+  --coral:#f4a6a0; --coral-deep:#ec8b84; --coral-soft:#fbe3e0;
+  --cream:#fcf8f5; --paper:#ffffff; --line:#efe6e1;
+  --muted:#7a7689; --muted-2:#9a96a8;
+  --radius:20px; --shadow:0 24px 60px -32px rgba(43,46,67,.30);
+  --shadow-sm:0 12px 30px -18px rgba(43,46,67,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Manrope';font-weight:700;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--coral-deep)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--coral)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:100px;font-family:'Manrope';font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px -14px rgba(43,46,67,.5)}
+.btn-coral{background:var(--coral);color:var(--navy)}
+.btn-coral:hover{transform:translateY(-3px);box-shadow:0 18px 36px -14px rgba(236,139,132,.55)}
+.btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--coral);transform:translateY(-3px)}
+
+header{position:sticky;top:0;z-index:60;background:rgba(252,248,245,.85);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+header.scrolled{border-color:var(--line);box-shadow:0 8px 30px -22px rgba(43,46,67,.4)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+.logo img{height:38px}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-weight:600;font-size:.93rem;color:var(--navy-soft);position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--coral);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-phone{font-weight:800;color:var(--navy);font-size:.95rem;white-space:nowrap}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{width:26px;height:2.5px;background:var(--navy);border-radius:3px;transition:.3s}
+
+.hero{position:relative;padding:72px 0 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-180px;right:-160px;width:560px;height:560px;background:radial-gradient(circle,var(--coral-soft),transparent 68%);z-index:0}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);padding:9px 18px;border-radius:100px;font-weight:700;font-size:.82rem;color:var(--navy-soft);box-shadow:var(--shadow-sm);margin-bottom:26px}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#5bbf8a;box-shadow:0 0 0 4px rgba(91,191,138,.18)}
+.hero h1{font-size:clamp(2.7rem,5.6vw,4.4rem)}
+.hero h1 em{font-style:italic;color:var(--coral-deep)}
+.hero-sub{font-size:1.18rem;color:var(--muted);margin:26px 0 34px;max-width:30ch}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-trust{display:flex;gap:30px;margin-top:40px;padding-top:30px;border-top:1px solid var(--line)}
+.hero-trust .t-num{font-family:'Fraunces';font-size:1.9rem;color:var(--navy);font-weight:600}
+.hero-trust .t-lab{font-size:.82rem;color:var(--muted);font-weight:600}
+.hero-visual{position:relative}
+.hero-visual .main-img{border-radius:30px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/4.6;background:var(--coral-soft)}
+.hero-visual .main-img img{width:100%;height:100%;object-fit:cover}
+.hero-float{position:absolute;left:-30px;bottom:38px;background:var(--paper);border-radius:18px;padding:18px 22px;box-shadow:var(--shadow);display:flex;align-items:center;gap:14px;max-width:240px}
+.hero-float .hf-ico{width:46px;height:46px;border-radius:13px;background:var(--coral-soft);display:grid;place-items:center;flex-shrink:0}
+.hero-float .hf-t{font-weight:800;font-size:.95rem;color:var(--navy);line-height:1.3}
+.hero-float .hf-s{font-size:.78rem;color:var(--muted)}
+
+.strip{background:var(--navy);color:#fff;padding:22px 0}
+.strip .wrap{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;text-align:center}
+.strip .s-em{font-family:'Fraunces';font-style:italic;font-size:1.3rem;color:var(--coral)}
+.strip .s-txt{font-weight:600;color:rgba(255,255,255,.85);font-size:1.02rem}
+
+section.block{padding:100px 0}
+.sec-head{max-width:640px;margin-bottom:54px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:clamp(2.1rem,4vw,3.1rem);margin-top:16px;color:var(--navy)}
+.sec-head p{color:var(--muted);font-size:1.08rem;margin-top:16px}
+
+.onas-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.onas-img{position:relative}
+.onas-img img{border-radius:26px;box-shadow:var(--shadow);aspect-ratio:1/1;object-fit:cover;width:100%}
+.onas-img .badge-circle{position:absolute;right:-26px;top:-26px;width:128px;height:128px;border-radius:50%;background:var(--coral);color:var(--navy);display:grid;place-items:center;text-align:center;font-family:'Fraunces';font-weight:600;line-height:1.1;box-shadow:var(--shadow);padding:14px}
+.onas-img .badge-circle b{font-size:1.7rem;display:block}
+.onas-img .badge-circle span{font-size:.72rem;font-family:'Manrope';font-weight:700}
+.onas-body h3{font-size:1.32rem;color:var(--navy);margin:30px 0 10px}
+.onas-body h3:first-child{margin-top:0}
+.onas-body p{color:var(--muted);margin-bottom:14px}
+.onas-body .lead{font-size:1.18rem;color:var(--ink);font-weight:500}
+
+#sluzby{background:var(--paper)}
+.sluzby-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sluzba{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.sluzba:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.sluzba .s-img{aspect-ratio:16/10;overflow:hidden}
+.sluzba .s-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.sluzba:hover .s-img img{transform:scale(1.06)}
+.sluzba .s-body{padding:24px 24px 28px}
+.sluzba h3{font-size:1.24rem;color:var(--navy);margin-bottom:10px}
+.sluzba p{font-size:.93rem;color:var(--muted);line-height:1.6}
+.sluzba .s-num{font-family:'Fraunces';font-size:.85rem;color:var(--coral-deep);font-weight:600;letter-spacing:.05em}
+
+.tym-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.clen{text-align:center}
+.clen .c-photo{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/3.7;margin-bottom:18px;box-shadow:var(--shadow-sm);background:#eee}
+.clen .c-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.96);transition:transform .5s}
+.clen:hover .c-photo img{transform:scale(1.05)}
+.clen .c-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(43,46,67,.18),transparent 45%)}
+.clen h3{font-size:1.12rem;color:var(--navy)}
+.clen .c-role{font-size:.86rem;color:var(--coral-deep);font-weight:700;margin-top:4px}
+/* lékaři & hygiena – medailonky s textem */
+.tym-lead{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:start;margin-bottom:46px}
+.lead-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+.lead-card .lc-photo{aspect-ratio:3/3.1;overflow:hidden;background:var(--coral-soft)}
+.lead-card .lc-photo img{width:100%;height:100%;object-fit:cover}
+.lead-card .lc-photo.ph{display:grid;place-items:center}
+.lead-card .lc-photo.ph span{font-family:'Fraunces';font-size:3.4rem;color:var(--coral-deep);font-weight:600}
+.lead-card .lc-body{padding:24px 24px 26px}
+.lead-card h3{font-size:1.18rem;color:var(--navy)}
+.lead-card .c-role{font-size:.84rem;color:var(--coral-deep);font-weight:700;margin:5px 0 14px}
+.lead-card p{font-size:.92rem;color:var(--muted);line-height:1.62;margin-bottom:12px}
+.lead-card .lc-meta{font-size:.8rem;color:var(--muted-2);line-height:1.55;border-top:1px solid var(--line);padding-top:12px;margin-top:6px}
+.lead-card .lc-meta b{color:var(--navy);font-weight:700}
+/* štíhlý výčet výkonů */
+.vykony-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:960px;margin:0 auto}
+.vykon{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-weight:600;color:var(--navy);font-size:.96rem;display:flex;gap:11px;align-items:center}
+.vykon::before{content:"";flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px var(--coral-soft)}
+
+#galerie{background:var(--paper)}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.gal-grid figure{overflow:hidden;border-radius:18px;cursor:pointer;background:#eee;aspect-ratio:3/2;box-shadow:var(--shadow-sm)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal-grid figure:hover img{transform:scale(1.05)}
+
+#cenik{background:linear-gradient(180deg,var(--cream),#f6ede8)}
+.cenik-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.cenik-note{background:var(--navy);color:#fff;border-radius:var(--radius);padding:38px 34px;position:sticky;top:100px}
+.cenik-note h3{color:#fff;font-size:1.7rem;margin-bottom:16px}
+.cenik-note p{color:rgba(255,255,255,.78);font-size:.96rem;margin-bottom:14px}
+.cenik-note .free-tag{display:inline-block;background:var(--coral);color:var(--navy);font-weight:800;padding:6px 14px;border-radius:100px;font-size:.8rem;margin-top:8px}
+.cenik-list{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:14px 30px;box-shadow:var(--shadow-sm)}
+.cenik-row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.cenik-row:last-child{border-bottom:none}
+.cenik-row .c-name{font-weight:600;color:var(--navy);font-size:.96rem}
+.cenik-row .c-price{font-family:'Fraunces';font-weight:600;color:var(--navy);white-space:nowrap;font-size:1rem}
+.cenik-row .c-price.free{color:#5bbf8a}
+
+.rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rec-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-sm)}
+.rec-stars{color:var(--coral-deep);font-size:1.05rem;letter-spacing:3px;margin-bottom:14px}
+.rec-card p{color:var(--ink);font-size:.98rem;font-style:italic;margin-bottom:18px;line-height:1.65}
+.rec-card .r-name{font-weight:800;color:var(--navy);font-size:.92rem}
+
+#kontakt{background:var(--navy);color:#fff}
+#kontakt .sec-head h2{color:#fff}
+#kontakt .sec-head p{color:rgba(255,255,255,.7)}
+.kont-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px}
+.kont-info{display:flex;flex-direction:column;gap:14px}
+.kont-card{display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px 24px}
+.kont-card .k-ico{width:48px;height:48px;border-radius:13px;background:var(--coral);display:grid;place-items:center;flex-shrink:0;color:var(--navy)}
+.kont-card .k-lab{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:4px}
+.kont-card .k-val{font-weight:700;font-size:1.05rem}
+.kont-card .k-val a{color:#fff}
+.hours{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px 24px;margin-top:2px}
+.hours .k-lab{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:12px}
+.hour-row{display:flex;justify-content:space-between;padding:6px 0;font-size:.95rem;color:rgba(255,255,255,.88)}
+.hour-row b{color:#fff;font-weight:700}
+.kont-form{background:#fff;border-radius:var(--radius);padding:34px;color:var(--ink)}
+.kont-form h3{color:var(--navy);font-size:1.5rem;margin-bottom:8px}
+.kont-form p.fs{color:var(--muted);font-size:.9rem;margin-bottom:22px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;font-size:.82rem;color:var(--navy);margin-bottom:6px}
+.field input,.field textarea{width:100%;padding:13px 16px;border:1.5px solid var(--line);border-radius:12px;font-family:'Manrope';font-size:.95rem;background:var(--cream);transition:border-color .25s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--coral)}
+.field textarea{resize:vertical;min-height:96px}
+.form-note{font-size:.78rem;color:var(--muted-2);margin-top:12px;text-align:center}
+
+footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
+.foot-grid{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand{display:flex;flex-direction:column;gap:2px}
+.foot-brand .fb-name{font-family:'Manrope';font-weight:800;font-size:1.55rem;letter-spacing:-.02em;color:#fff;line-height:1}
+.foot-brand .fb-name em{font-style:normal;color:var(--coral)}
+.foot-brand .fb-sub{font-size:.76rem;letter-spacing:.06em;color:rgba(255,255,255,.55);text-transform:uppercase}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap}
+.foot-links a{font-weight:600;font-size:.9rem;color:rgba(255,255,255,.7)}
+.foot-links a:hover{color:var(--coral)}
+.foot-bottom{padding-top:22px;font-size:.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+[data-r]{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+[data-r].in{opacity:1;transform:none}
+
+.lb{position:fixed;inset:0;background:rgba(35,38,58,.94);z-index:200;display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:88vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+
+@media(max-width:980px){
+  .hero-grid,.onas-grid,.cenik-wrap,.kont-grid{grid-template-columns:1fr;gap:40px}
+  .sluzby-grid,.rec-grid{grid-template-columns:1fr 1fr}
+  .tym-grid,.tym-lead,.vykony-grid{grid-template-columns:1fr 1fr}
+  .cenik-note{position:static}
+  .hero-visual{max-width:440px;margin:0 auto}
+}
+@media(max-width:680px){
+  .nav-links,.nav-phone{display:none}
+  .hamburger{display:flex}
+  .sluzby-grid,.rec-grid,.tym-grid,.tym-lead,.vykony-grid,.gal-grid{grid-template-columns:1fr}
+  section.block{padding:70px 0}
+  .hero-float{left:50%;transform:translateX(-50%);bottom:-26px}
+  .mobile-menu.open{display:flex}
+}
+.mobile-menu{display:none;flex-direction:column;gap:4px;background:#fff;border-top:1px solid var(--line);padding:18px 28px 26px}
+.mobile-menu a{padding:12px 0;font-weight:700;color:var(--navy);border-bottom:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#" class="logo"><img src="img/proeste-logo.png" alt="PRO ESTE — Dentální centrum" /></a>
+    <nav class="nav-links">
+      <a href="#onas">O nás</a>
+      <a href="#sluzby">Služby</a>
+      <a href="#tym">Náš tým</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#cenik">Ceník</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone">+420 739 844 843</span>
+      <a href="#kontakt" class="btn btn-coral">Objednat se</a>
+      <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mm">
+    <a href="#onas">O nás</a><a href="#sluzby">Služby</a><a href="#tym">Náš tým</a>
+    <a href="#galerie">Galerie</a><a href="#cenik">Ceník</a><a href="#kontakt">Kontakt</a>
+    <a href="tel:+420739844843">📞 +420 739 844 843</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text" data-r>
+      <div class="hero-badge"><span class="dot"></span> Přijímáme nové pacienty · Prostějov</div>
+      <h1>Zubní péče,<br>z níž odcházíte<br>se <em>spokojeným úsměvem</em></h1>
+      <p class="hero-sub">Komplexní stomatologie pro celou rodinu v příjemném prostředí — profesionální léčba i účinná prevence, bezbolestně a bez zbytečného čekání.</p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn btn-primary">Objednat se →</a>
+        <a href="#sluzby" class="btn btn-ghost">Naše služby</a>
+      </div>
+      <div class="hero-trust">
+        <div><div class="t-num">ZDARMA</div><div class="t-lab">Vstupní vyšetření<br>i prohlídka</div></div>
+        <div><div class="t-num">6</div><div class="t-lab">Členů<br>v týmu</div></div>
+        <div><div class="t-num">✓</div><div class="t-lab">Smlouvy<br>s pojišťovnami</div></div>
+      </div>
+    </div>
+    <div class="hero-visual" data-r>
+      <div class="main-img"><img src="img/about-about.jpg" alt="Příjemné rodinné prostředí dentálního centra PRO ESTE" /></div>
+      <div class="hero-float">
+        <div class="hf-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ec8b84" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3 1.5 3.5 2.5C10 6.5 11 5 13 5h.5C17 5 18.5 9 16.5 12 14 16.5 12 21 12 21z"/></svg>
+        </div>
+        <div><div class="hf-t">Bez bolesti</div><div class="hf-s">Vstřícný přístup ke každému</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <span class="s-em">Máme smlouvy</span>
+    <span class="s-txt">se zdravotními pojišťovnami — využijte hrazené ošetření</span>
+  </div>
+</div>
+
+<section class="block" id="onas">
+  <div class="wrap onas-grid">
+    <div class="onas-img" data-r>
+      <img src="img/gallery-gallery1.jpg" alt="Ordinace dentálního centra PRO ESTE v Prostějově" />
+      <div class="badge-circle"><span>Najdete nás u</span><b>parku</b><span>blízko centra</span></div>
+    </div>
+    <div class="onas-body" data-r>
+      <span class="eyebrow">O PRO ESTE</span>
+      <h2 style="font-size:clamp(2rem,3.6vw,2.8rem);color:var(--navy);margin:16px 0 22px">Zubní péče na úrovni — pro&nbsp;vás i&nbsp;celou rodinu</h2>
+      <p class="lead">Cílem dentálního centra PRO ESTE je poskytnout pacientům a rodinám v Prostějově a okolí zubní péči na úrovni — od špičkové léčby po pravidelnou prevenci, aby vám váš chrup v pořádku sloužil až do stáří.</p>
+      <h3>Profesionální léčba i účinná prevence</h3>
+      <p>Při první návštěvě vyplníte dotazník, provedeme panoramatický snímek vašeho chrupu a poté následuje konzultace se zubní lékařkou. Společně sestavíme léčebný plán dle vašich časových možností. Po vyléčení vám názorně ukážeme, jak si čistit zuby, abyste k nám chodili už jen na preventivní prohlídky. Vždy se předem dozvíte, jaký výkon bude prováděn — ošetření u nás se bát nemusíte.</p>
+      <h3>Komfortní zázemí a vstřícný přístup</h3>
+      <p>Záleží nám na vašem pohodlí. Postaráme se o to, aby návštěva proběhla bez zbytečného čekání a byli jste bezbolestně ošetřeni. Najdete nás v příjemném prostředí rodinného domku vedle parku poblíž centra Prostějova. Pokud přijdete s rodinou, můžete být při ošetření svých dětí po celou dobu v ordinaci.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="sluzby">
+  <div class="wrap">
+    <div class="sec-head center" data-r>
+      <span class="eyebrow">Co u nás zařídíme</span>
+      <h2>Naše služby</h2>
+      <p>Komplexní stomatologická péče pod jednou střechou — od precizní diagnostiky po estetické ošetření.</p>
+    </div>
+    <div class="vykony-grid">
+      <div class="vykon" data-r>Panoramatický rentgen (OPG)</div>
+      <div class="vykon" data-r>Stanovení léčebného plánu</div>
+      <div class="vykon" data-r>Dentální hygiena + Air&nbsp;Flow</div>
+      <div class="vykon" data-r>Bílé plomby</div>
+      <div class="vykon" data-r>Keramické korunky a&nbsp;můstky</div>
+      <div class="vykon" data-r>Endodoncie (kořenové kanálky)</div>
+      <div class="vykon" data-r>Ošetření pod mikroskopem</div>
+      <div class="vykon" data-r>Prevence a&nbsp;preventivní prohlídky</div>
+      <div class="vykon" data-r>Bělení zubů</div>
+    </div>
+    <div style="text-align:center;margin-top:34px" data-r>
+      <a href="#kontakt" class="btn btn-coral">Objednat se na vyšetření zdarma →</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="tym">
+  <div class="wrap">
+    <div class="sec-head center" data-r>
+      <span class="eyebrow">Lidé, kterým můžete věřit</span>
+      <h2>Náš tým</h2>
+      <p>O váš úsměv se stará sehraný tým zkušených odborníků.</p>
+    </div>
+    <div class="tym-lead">
+      <article class="lead-card" data-r>
+        <div class="lc-photo"><img src="img/team-stridecka.jpg" alt="MDDr. Radka Střídecká" /></div>
+        <div class="lc-body">
+          <h3>MDDr. Radka Střídecká</h3>
+          <div class="c-role">Zubní lékařka · majitelka</div>
+          <p>Mít krásný úsměv a&nbsp;zdravé zuby by chtěl každý člověk. Cesta k&nbsp;tomu je někdy snadná, někdy delší a&nbsp;složitější. Důležité ale je, že řešení existuje i&nbsp;v&nbsp;těch nejkomplikovanějších případech.</p>
+          <div class="lc-meta"><b>Vzdělání:</b> LF, obor zubní lékařství, Masarykova univerzita Brno (promoce 2011); Gymnázium Jiřího Wolkera, Prostějov.<br><b>Praxe:</b> Audacia klinik Slaný (2011–2013) · Dentální klinika Jakovidis Ostrava (2017) · účast na odborných kongresech a seminářích.</div>
+        </div>
+      </article>
+      <article class="lead-card" data-r>
+        <div class="lc-photo"><img src="img/team-osadnik.jpg" alt="MDDr. Jakub Osadník" /></div>
+        <div class="lc-body">
+          <h3>MDDr. Jakub Osadník</h3>
+          <div class="c-role">Zubní lékař</div>
+          <p>Zubní lékařství mě fascinuje propojením vědy, precizní řemeslné práce a&nbsp;každodenního kontaktu s&nbsp;lidmi. Umožňuje mi spojovat manuální zručnost s&nbsp;odbornými znalostmi a&nbsp;zároveň se neustále profesně rozvíjet. Důležitý je pro mě individuální přístup ke&nbsp;každému pacientovi, který vede ke&nbsp;kvalitnímu ošetření s&nbsp;důrazem na prevenci a&nbsp;dentální hygienu. Mou snahou je přátelský přístup, aby se k&nbsp;nám pacienti vraceli bez obav, a&nbsp;zubní ošetření pro ně přestalo být obávaným strašákem.</p>
+          <div class="lc-meta"><b>Vzdělání:</b> LF Univerzity Palackého v&nbsp;Olomouci, obor zubní lékařství (promoce 2026); Mendelovo gymnázium Opava.<br><b>Praxe a&nbsp;stáže:</b> Banf Dentistry (Banff, Kanada) · Cenessto Brno · Dental Medicine Opava.</div>
+        </div>
+      </article>
+      <article class="lead-card" data-r>
+        <div class="lc-photo ph"><span>AK</span></div>
+        <div class="lc-body">
+          <h3>Andrea Kovaříková DiS.</h3>
+          <div class="c-role">Dentální hygienistka</div>
+          <p>Věřím, že krásný úsměv stojí především na zdravých zubech, dásních a&nbsp;tkáních, které je podporují, protože právě zdraví těchto struktur je základem dlouhodobě funkčního a&nbsp;estetického chrupu. Zakládám si na individuálním přístupu, pečlivosti a&nbsp;příjemné atmosféře během ošetření.</p>
+          <div class="lc-meta"><b>Vzdělání:</b> SZŠ a&nbsp;VOŠ zdravotnická Brno, Diplomovaná dentální hygienistka (promoce 2023); SOŠ podnikání a&nbsp;obchodu, Prostějov.<br><b>Kurzy:</b> Guided Biofilm Therapy 2022.</div>
+        </div>
+      </article>
+    </div>
+    <div class="tym-grid">
+      <div class="clen" data-r>
+        <div class="c-photo"><img src="img/team-vykoukalova.jpg" alt="Veronika Vykoukalová" /></div>
+        <h3>Veronika Vykoukalová</h3><div class="c-role">Zubní instrumentářka</div>
+      </div>
+      <div class="clen" data-r>
+        <div class="c-photo"><img src="img/team-planickova.jpg" alt="Andrea Planičková" /></div>
+        <h3>Andrea Planičková</h3><div class="c-role">Zubní instrumentářka</div>
+      </div>
+      <div class="clen" data-r>
+        <div class="c-photo"><img src="img/team-ivana.jpg" alt="Ivana Střídecká" /></div>
+        <h3>Ivana Střídecká</h3><div class="c-role">Recepční</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="galerie">
+  <div class="wrap">
+    <div class="sec-head center" data-r>
+      <span class="eyebrow">Nahlédněte k nám</span>
+      <h2>Galerie</h2>
+      <p>Moderní vybavení v příjemném, domácím prostředí rodinného domku u parku.</p>
+    </div>
+    <div class="gal-grid" data-r>
+      <figure><img src="img/gallery-gallery1.jpg" alt="Ordinace PRO ESTE" /></figure>
+      <figure><img src="img/gallery-gallery2.jpg" alt="Vybavení ordinace" /></figure>
+      <figure><img src="img/gallery-gallery3.jpg" alt="Prostředí dentálního centra" /></figure>
+      <figure><img src="img/gallery-gallery4.jpg" alt="Zázemí kliniky" /></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="cenik">
+  <div class="wrap">
+    <div class="sec-head center" data-r>
+      <span class="eyebrow">Jasné a férové ceny</span>
+      <h2>Ceník</h2>
+    </div>
+    <div class="cenik-wrap">
+      <div class="cenik-note" data-r>
+        <h3>Vstupní vyšetření i&nbsp;prohlídka <span style="color:var(--coral)">zdarma</span></h3>
+        <p>Vstupní vyšetření, stanovení léčebného plánu, preventivní prohlídka, intraorální snímek i anestezie u nás nic nestojí.</p>
+        <p>Máme smlouvy se zdravotními pojišťovnami — řada výkonů je tak plně či částečně hrazená.</p>
+        <span class="free-tag">Vstupní vyšetření 0 Kč</span>
+        <div style="margin-top:26px"><a href="#kontakt" class="btn btn-coral">Objednat se →</a></div>
+      </div>
+      <div class="cenik-list" data-r>
+        <div class="cenik-row"><span class="c-name">Vstupní vyšetření a stanovení léčebného plánu</span><span class="c-price free">ZDARMA</span></div>
+        <div class="cenik-row"><span class="c-name">Preventivní prohlídka</span><span class="c-price free">ZDARMA</span></div>
+        <div class="cenik-row"><span class="c-name">Konzultace</span><span class="c-price">1 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Intraorální snímek</span><span class="c-price free">ZDARMA</span></div>
+        <div class="cenik-row"><span class="c-name">Anestezie</span><span class="c-price free">ZDARMA</span></div>
+        <div class="cenik-row"><span class="c-name">Kofferdam</span><span class="c-price">400 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Optragate</span><span class="c-price">250 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Provizorní korunka — ordinace</span><span class="c-price">800 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Skloionomerní výplň</span><span class="c-price">1 500 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Bílá fotokompozitní výplň</span><span class="c-price">2 000 – 4 500 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Dostavba zubu</span><span class="c-price">4 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Domácí bělení</span><span class="c-price">6 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Vnitřní bělení (zub)</span><span class="c-price">4 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Zpráva pro lékaře</span><span class="c-price">500 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Endodontické ošetření — 1 kořenový kanálek</span><span class="c-price">4 500 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Endodontické ošetření — 2 kořenové kanálky</span><span class="c-price">5 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Endodontické ošetření — 3 kořenové kanálky</span><span class="c-price">6 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Endodontické ošetření — 4 kořenové kanálky</span><span class="c-price">6 500 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Reendodontické ošetření</span><span class="c-price">5 000 – 8 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Léčebná kořenová výplň</span><span class="c-price">3 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Korunka zirkonová celoanatomická</span><span class="c-price">8 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Korunka e.max</span><span class="c-price">10 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Člen můstku zirkonový celoanatomický</span><span class="c-price">8 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Člen můstku e.max</span><span class="c-price">10 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Skeletová náhrada</span><span class="c-price">8 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Deflex</span><span class="c-price">10 000 Kč</span></div>
+        <div class="cenik-row"><span class="c-name">Dentální hygiena</span><span class="c-price">1 800 Kč</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="recenze">
+  <div class="wrap">
+    <div class="sec-head center" data-r>
+      <span class="eyebrow">Co říkají pacienti</span>
+      <h2>Spokojené úsměvy</h2>
+    </div>
+    <div class="rec-grid">
+      <div class="rec-card" data-r><div class="rec-stars">★★★★★</div><p>„Konečně ordinace, kde se nebojím. Vše mi v klidu vysvětlili a ošetření bylo opravdu bezbolestné. Příjemné prostředí a milý personál."</p><div class="r-name">Jana K.</div></div>
+      <div class="rec-card" data-r><div class="rec-stars">★★★★★</div><p>„Skvělý přístup k dětem — mohla jsem být u syna celou dobu v ordinaci. Paní doktorka i hygienistka byly úžasné. Vřele doporučuji."</p><div class="r-name">Petra M.</div></div>
+      <div class="rec-card" data-r><div class="rec-stars">★★★★★</div><p>„Vstupní vyšetření zdarma, žádné čekání, moderní vybavení a hlavně lidský přístup. Přesně tak má vypadat péče o chrup."</p><div class="r-name">Tomáš R.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="kontakt">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="eyebrow">Ozvěte se nám</span>
+      <h2>Objednejte se na vyšetření</h2>
+      <p>Zavolejte nám nebo napište — rádi se vám budeme věnovat.</p>
+    </div>
+    <div class="kont-grid">
+      <div class="kont-info" data-r>
+        <div class="kont-card">
+          <div class="k-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="k-lab">Telefon</div><div class="k-val"><a href="tel:+420739844843">+420 739 844 843</a></div></div>
+        </div>
+        <div class="kont-card">
+          <div class="k-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="k-lab">Adresa</div><div class="k-val">Husovo náměstí 2268/45<br><span style="font-weight:600;color:rgba(255,255,255,.75);font-size:.95rem">796 01 Prostějov</span></div></div>
+        </div>
+        <div class="kont-card">
+          <div class="k-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></div>
+          <div><div class="k-lab">E-mail</div><div class="k-val"><a href="mailto:info@proeste.cz">info@proeste.cz</a></div></div>
+        </div>
+        <div class="hours">
+          <div class="k-lab">Ordinační hodiny</div>
+          <div class="hour-row"><span>Pondělí</span><b>7:30 – 14:30</b></div>
+          <div class="hour-row"><span>Úterý</span><b>7:30 – 17:30</b></div>
+          <div class="hour-row"><span>Středa</span><b>7:30 – 17:30</b></div>
+          <div class="hour-row"><span>Čtvrtek</span><b>7:30 – 17:30</b></div>
+          <div class="hour-row"><span>Pátek</span><b>7:30 – 14:00</b></div>
+        </div>
+      </div>
+      <form class="kont-form" data-r onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Toto je ukázka — formulář se na ostrém webu odešle do ordinace.';">
+        <h3>Napište nám</h3>
+        <p class="fs">Ozveme se vám zpět co nejdříve.</p>
+        <div class="field"><label>Jméno a příjmení</label><input type="text" required placeholder="Vaše jméno" /></div>
+        <div class="field"><label>Telefon</label><input type="tel" required placeholder="+420…" /></div>
+        <div class="field"><label>E-mail</label><input type="email" placeholder="vas@email.cz" /></div>
+        <div class="field"><label>Zpráva</label><textarea placeholder="S čím vám můžeme pomoci?"></textarea></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Odeslat poptávku</button>
+        <div class="form-note"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><span class="fb-name">Pro<em>Este</em></span><span class="fb-sub">Dentální centrum</span></div>
+      <nav class="foot-links">
+        <a href="#onas">O nás</a><a href="#sluzby">Služby</a><a href="#tym">Tým</a>
+        <a href="#galerie">Galerie</a><a href="#cenik">Ceník</a><a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 PRO ESTE — Dentální centrum · Husovo náměstí 2268/45, Prostějov</span>
+      <span>+420 739 844 843 · info@proeste.cz</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb"><img src="" alt="" /></div>
+
+<script>
+const hd=document.getElementById('header');
+addEventListener('scroll',()=>hd.classList.toggle('scrolled',scrollY>20));
+const ham=document.getElementById('ham'),mm=document.getElementById('mm');
+ham&&ham.addEventListener('click',()=>mm.classList.toggle('open'));
+mm&&mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('[data-r]').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+const lb=document.getElementById('lb');
+document.querySelectorAll('.gal-grid img').forEach(img=>img.parentElement.addEventListener('click',()=>{lb.querySelector('img').src=img.src;lb.classList.add('open')}));
+lb.addEventListener('click',()=>lb.classList.remove('open'));
+</script>
+</body>
+</html>
